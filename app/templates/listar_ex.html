@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block styles %}
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+{% endblock styles %}
+
+{% block content %}
+<h1>Exercícios para {{ categoria }}</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Carga</th>
+      <th>categoria</th>
+      <th>Criado em</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  {% for exercicio in exercicios %}
+      <tr>
+          <td>{{exercicio.nome}}</td>
+          <td>{{exercicio.carga}}</td>
+          <td>{{exercicio.categoria}}</td>
+          <td>{{exercicio.data | date:"d/m/Y"}}</td>
+          <td><a href="{% url 'exercicio.editar' exercicio.pk %}">Atualizar</a> | <a href="{% url 'exercicio.deletar' exercicio.pk %}">Deletar</a></td>
+      </tr>
+  {% endfor %}
+  </tbody>
+
+</table>
+
+<!--Aqui vai ficar o botão de adicionar novo exercício-->
+
+{% endblock content %}

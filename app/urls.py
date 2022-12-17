@@ -18,7 +18,8 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('peitoral/', views.peitoral, name='peitoral'),
-    path('perna/', views.perna, name='perna'),
-    path('costas/', views.costas, name='costas'),
+    path('execs/<str:nm>/', views.listar, name='exercicio.listar'),
+    path('ex/c/', views.criar, name='exercicio.criar'),
+    path('ex/e/<int:pk>/', views.editar, name='exercicio.editar'),
+    path('ex/d/<int:pk>/', views.deletar, name='exercicio.deletar'),
 ]
