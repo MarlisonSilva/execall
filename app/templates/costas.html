@@ -1,0 +1,29 @@
+{% load static %}
+
+{% block content %}
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Carga</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for i in exercicios %}
+    <tr>
+      <td>{{i.nome}}</td>
+      <td>{{i.carga}}</td>
+      <td>{{i.data}}</td>
+      <td>Atualizar | Deletar</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+
+</table>
+
+<!--Aqui vai ficar o botão de adicionar novo exercício-->
+
+{% endblock content %}
