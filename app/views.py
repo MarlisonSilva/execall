@@ -31,3 +31,10 @@ def deletar(request, pk):
     exercicio = Exercicio.objects.get(pk=pk)
     exercicio.delete()
     return redirect('home')
+
+def pesquisa(request):
+    if request.method == 'GET':        
+        txtPesquisa = request.GET.get('txtPesquisa')
+        exercicios = Exercicio.objects.filter(nome__startswith=txtPesquisa)
+        return render(request, "res_consulta.html", { 'exercicios': exercicios, 'txtPesquisa': txtPesquisa })
+        

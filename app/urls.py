@@ -22,4 +22,6 @@ urlpatterns = [
     path('ex/c/', views.criar, name='exercicio.criar'),
     path('ex/e/<int:pk>/', views.editar, name='exercicio.editar'),
     path('ex/d/<int:pk>/', views.deletar, name='exercicio.deletar'),
+    path('pesquisa/', views.pesquisa, name='pesquisa'),
+
 ]
