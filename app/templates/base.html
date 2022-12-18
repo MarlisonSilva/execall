@@ -24,7 +24,8 @@
 
 <body>
     <header>
-        <h1 id="tittle">Exe<span id="span">call</span></h1>
+        <h1 id="tittle"><a href="{% url 'home' %}" id="tittle-link">Exe<span id="span">call</a></span>
+        </h1>
         <nav>
             <a href="{% url 'home' %}" class="nav-btn">Home</a>
             <a href="{% url 'exercicio.criar' %}" class="nav-btn">Novo exercício</a>
